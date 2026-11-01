@@ -171,6 +171,14 @@ button:hover {
 
 <div class="wallpaper"></div>
 
+<audio id="backgroundMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()" id="musicButton">
+  ▶ Play our song ♡
+</button>
+  
 <div class="scrapbook">
 
   <!-- Picture 1 -->
@@ -273,6 +281,19 @@ button:hover {
 <script>
 function yes() {
   document.getElementById("answer").style.display = "block";
+}
+
+  function toggleMusic() {
+  const music = document.getElementById("backgroundMusic");
+  const button = document.getElementById("musicButton");
+
+  if (music.paused) {
+    music.play();
+    button.innerHTML = "⏸ Pause music ♡";
+  } else {
+    music.pause();
+    button.innerHTML = "▶ Play our song ♡";
+  }
 }
 </script>
 
