@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #ffd9e8, #fff0f5, #fbc4d9);
+  color: #843d59;
+  overflow-x: hidden;
+}
+
+/* Wallpaper */
+.wallpaper {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(#ffd9e855, #ffd9e855),
+    url("wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Main scrapbook */
+.scrapbook {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Polaroid photos */
+.photo {
+  background: white;
+  padding: 10px 10px 30px;
+  box-shadow: 0 8px 20px #9d526633;
+  transform: rotate(-5deg);
+  margin: 20px auto;
+  max-width: 220px;
+  transition: transform 0.3s;
+}
+
+.photo:nth-child(even) {
+  transform: rotate(5deg);
+}
+
+.photo:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.photo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.caption {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 12px;
+}
+
+/* Centre letter */
+.letter {
+  background: #fffaf5;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px #9d526633;
+  border-radius: 4px;
+  position: relative;
+}
+
+.letter h1 {
+  font-size: 30px;
+  color: #d65b8b;
+}
+
+.letter p {
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.heart {
+  font-size: 30px;
+}
+
+button {
+  border: none;
+  padding: 14px 25px;
+  background: #e75c91;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+button:hover {
+  background: #ce3d75;
+}
+
+#answer {
+  display: none;
+  font-size: 22px;
+  color: #d64f85;
+  margin-top: 20px;
+}
+
+/* Phone layout */
+@media (max-width: 750px) {
+  .scrapbook {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 12px;
+    gap: 12px;
+  }
+
+  .letter {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .photo img {
+    height: 140px;
+  }
+
+  .photo {
+    max-width: 170px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wallpaper"></div>
+
+<div class="scrapbook">
+
+  <!-- Picture 1 -->
+  <div class="photo">
+    <img src="photo1.jpg" alt="Us">
+    <div class="caption">my favourite person ♡</div>
+  </div>
+
+  <!-- Centre letter -->
+  <div class="letter">
+    <div class="heart">♡</div>
+
+    <h1>Hey, you...</h1>
+
+    <p>
+      I wanted to make you this to ask you,
+      if you wanted to retry at love, 
+      just one more time, to reignte what was special
+    </p>
+
+    <p>
+      every single moment that we spend together
+      is so unbelievably special to me miley,
+      i just need it to be us, my baby.
+    </p>
+
+    <p>
+      theres been something i need to ask you, my sunshine.
+    </p>
+
+    <h2>Will you be my girlfriend?</h2>
+
+    <button onclick="yes()">YES ❤️</button>
+
+    <div id="answer">
+      YAYYYYY MY LITTLE BABY❤️
+      <p>You make me the happiest person ever, i hope i make you that too.</p>
+    </div>
+  </div>
+
+  <!-- Picture 2 -->
+  <div class="photo">
+    <img src="photo2.jpg" alt="Us">
+    <div class="caption">a little memory ♡</div>
+  </div>
+
+  <!-- Picture 3 -->
+  <div class="photo">
+    <img src="photo3.jpg" alt="Us">
+    <div class="caption">you make me smile</div>
+  </div>
+
+  <!-- Picture 4 -->
+  <div class="photo">
+    <img src="photo4.jpg" alt="Us">
+    <div class="caption">more memories to come?♡</div>
+  </div>
+
+</div>
+
+<script>
+function yes() {
+  document.getElementById("answer").style.display = "block";
+}
+</script>
+
+</body>
+</html>
