@@ -39,6 +39,10 @@ body {
   padding: 50px 20px;
   display: grid;
   grid-template-columns: 1fr 1.3fr 1fr;
+  grid-template-areas:
+    "photo1 letter photo3"
+    "photo2 letter photo4"
+    "photo5 photo6 photo7";
   align-items: center;
   gap: 25px;
 }
@@ -51,9 +55,10 @@ body {
   transform: rotate(-5deg);
   margin: 20px auto;
   max-width: 220px;
+  width: 100%;
   transition: transform 0.3s;
 }
-  
+
 .photo:nth-child(even) {
   transform: rotate(5deg);
 }
@@ -74,8 +79,18 @@ body {
   margin-top: 12px;
 }
 
+/* Place each photo */
+.photo1 { grid-area: photo1; }
+.photo2 { grid-area: photo2; }
+.photo3 { grid-area: photo3; }
+.photo4 { grid-area: photo4; }
+.photo5 { grid-area: photo5; }
+.photo6 { grid-area: photo6; }
+.photo7 { grid-area: photo7; }
+
 /* Centre letter */
 .letter {
+  grid-area: letter;
   background: #fffaf5;
   padding: 35px 25px;
   text-align: center;
@@ -124,13 +139,19 @@ button:hover {
 @media (max-width: 750px) {
   .scrapbook {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "letter letter"
+      "photo1 photo3"
+      "photo2 photo4"
+      "photo5 photo6"
+      "photo7 photo7";
     padding: 20px 12px;
     gap: 12px;
   }
 
   .letter {
-    grid-column: 1 / -1;
-    grid-row: 1;
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .photo img {
@@ -151,9 +172,15 @@ button:hover {
 <div class="scrapbook">
 
   <!-- Picture 1 -->
-  <div class="photo">
+  <div class="photo photo1">
     <img src="photo1.jpg" alt="Us">
     <div class="caption">my favourite person ♡</div>
+  </div>
+
+  <!-- Picture 2 -->
+  <div class="photo photo2">
+    <img src="photo2.jpg" alt="Us">
+    <div class="caption">a cute lil pic of us ♡</div>
   </div>
 
   <!-- Centre letter -->
@@ -164,7 +191,7 @@ button:hover {
 
     <p>
       I wanted to make you this to ask you,
-      to give love the chance it deserves 
+      to give love the chance it deserves
       and to allow us to create so many more
       fond memories, laughing, and having
       so much fun. i have so much fun around
@@ -175,7 +202,7 @@ button:hover {
       i want us to love, deeply, unfalteringly,
       i want us to have fun, to laugh, to enjoy
       eachothers precense, to make eachother
-      feel okay when things are bad. thats 
+      feel okay when things are bad. thats
       something so special to us. nobody else
       could replicate that.
     </p>
@@ -184,7 +211,7 @@ button:hover {
       every single moment that we spend together
       is so unbelievably special to me miley,
       i just need it to be us, my baby.
-      selfishly, i want you in my life, as my lover. 
+      selfishly, i want you in my life, as my lover.
       i want to love you, and
       show you how perfect we can be.
       we can be the best couple imagineable,
@@ -192,7 +219,7 @@ button:hover {
       Allow us to be the best couple in the world.
       we can be so happy together,
       we can have a long future together.
-      I love you <3 I wish you do too
+      I love you &lt;3 I wish you do too
     </p>
 
     <p>
@@ -209,38 +236,32 @@ button:hover {
     </div>
   </div>
 
-  <!-- Picture 2 -->
-  <div class="photo">
-    <img src="photo2.jpg" alt="Us">
-    <div class="caption">a cute lil pic of us ♡</div>
-  </div>
-
   <!-- Picture 3 -->
-  <div class="photo">
+  <div class="photo photo3">
     <img src="photo3.jpg" alt="Us">
     <div class="caption">From the last time we held eachother ♡</div>
   </div>
 
   <!-- Picture 4 -->
-  <div class="photo">
+  <div class="photo photo4">
     <img src="photo4.jpg" alt="Us">
     <div class="caption">more memories to come?♡</div>
   </div>
 
-   <!-- Picture 5 -->
-  <div class="photo">
+  <!-- Picture 5 -->
+  <div class="photo photo5">
     <img src="photo5.jpg" alt="Us">
     <div class="caption">♡</div>
   </div>
 
   <!-- Picture 6 -->
-  <div class="photo">
+  <div class="photo photo6">
     <img src="photo6.jpg" alt="Us">
     <div class="caption">♡</div>
   </div>
 
   <!-- Picture 7 -->
-  <div class="photo">
+  <div class="photo photo7">
     <img src="photo7.jpg" alt="Us">
     <div class="caption">♡</div>
   </div>
